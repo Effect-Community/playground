@@ -4,6 +4,14 @@ import { runMain } from '@effect-ts/node/Runtime'
 
 const program = T.gen(function* ($) {
   yield* $(T.succeedWith(() => console.log('hello world')))
+
+  const result = yield* $(pipe(
+    T.succeed(1),
+    T.map(_ => _ * 2),
+    T.map(_ => _ * 3) ,
+  ))
+
+  console.log({ result });
 })
 
 runMain(program)

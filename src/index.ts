@@ -11,7 +11,7 @@ const program = T.gen(function* ($) {
     T.map(_ => _ * 3) ,
   ))
 
-  console.log({ result });
+  yield* $(T.succeedWith(() => console.log({ result })))
 })
 
 runMain(program)

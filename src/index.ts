@@ -1,6 +1,7 @@
 import '@effect-ts/core/Tracing/Enable'
-import { Effect as T, pipe } from '@effect-ts/core'
+import * as T from '@effect-ts/core/Effect'
 import { runMain } from '@effect-ts/node/Runtime'
+import { pipe } from '@effect-ts/core/Function'
 
 const program = T.gen(function* ($) {
   yield* $(T.succeedWith(() => console.log('hello world')))

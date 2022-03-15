@@ -9,7 +9,6 @@ import { _A } from "@effect-ts/core/Utils"
 // Service Constructor
 //
 
-export const LoggerId = Symbol()
 
 export const makeLogger = T.succeedWith(() => {
   return service({
@@ -24,6 +23,7 @@ export const makeLogger = T.succeedWith(() => {
 //
 
 export interface Logger extends _A<typeof makeLogger> { }
+export const LoggerId = Symbol()
 export const Logger = tag<Logger>(LoggerId)
 
 // 

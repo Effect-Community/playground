@@ -12,7 +12,7 @@ import { _A } from "@effect-ts/core/Utils"
 export const LoggerId = Symbol()
 
 export const makeLogger = T.succeedWith(() => {
-  return service(LoggerId, {
+  return service({
     log: (s: string) => T.succeedWith(() => {
       console.log(s)
     })

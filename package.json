@@ -3,8 +3,8 @@
   "scripts": {
     "postinstall": "ts-patch install && ts-patch --persist",
     "dev:ts": "yarn build --watch",
-    "build": "tsc --build",
-    "start": "node dist/index.js"
+    "dev:run": "node dist/index.js",
+    "build": "tsc --build"
   },
   "dependencies": {
     "@effect-ts/core": "^0.56.0",
@@ -14,5 +14,8 @@
     "@effect-ts/tracing-plugin": "^0.18.0",
     "ts-patch": "^2.0.1",
     "typescript": "^4.5.5"
+  },
+  "stackblitz": {
+    "startCommand": "npm run dev:ts"
   }
 }
